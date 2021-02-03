@@ -32,7 +32,7 @@ http-response ^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getde
 B站 = type=http-response,pattern=https:\/\/ap(p|i)\.bilibili\.com\/((pgc\/player\/api\/playurl)|(x\/v2\/account\/myinfo\?)|(x\/v2\/account/mine\?)),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Script/Bilibili/BiliHD.js,script-update-interval=0
 #boxjs
 Rewrite: BoxJs = type=http-request,pattern=^https?://boxjs.net,script-path=https://gitee.com/chavyleung/scripts/raw/master/box/chavy.boxjs.js, requires-body=true, timeout=120
-#sub-store
+#sub-store(sub.store)
 Sub-Store = type=http-request,pattern=^https?:\/\/sub\.store,script-path=https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/sub-store.min.js,requires-body=true,timeout=120,max-size=131072
 
 [Rule]
@@ -40,4 +40,4 @@ Sub-Store = type=http-request,pattern=^https?:\/\/sub\.store,script-path=https:/
 RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu_remove_ads.list,REJECT
 
 [MITM]
-hostname = %APPEND% *.amemv.com,www.zhihu.com,api.zhihu.com,zhuanlan.zhihu.com,appcloud2.zhihu.com,api.weibo.cn,mapi.weibo.com,*.uve.weibo.com,api.m.jd.com,trade-acs.m.taobao.com,api.bilibili.com
+hostname = %APPEND% *.amemv.com,www.zhihu.com,api.zhihu.com,zhuanlan.zhihu.com,appcloud2.zhihu.com,api.weibo.cn,mapi.weibo.com,*.uve.weibo.com,api.m.jd.com,trade-acs.m.taobao.com,api.bilibili.com,sub.store
